@@ -65,7 +65,7 @@ section {
 }
 
 footer {
-    position: fixed;
+
     bottom: 0;
     left: 0;
     width: 100%;
@@ -585,7 +585,7 @@ pre code {
 
 .FlexFooter {
     display: flex;
-    justify-content: space-around; /* or space-between, center, etc. */
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -1246,8 +1246,8 @@ pre code {
     }
 
     .col-md-8 {
-        flex: 0 0 66.6666666667%;
-        max-width: 66.6666666667%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
     .col-md-9 {
