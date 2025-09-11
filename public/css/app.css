@@ -583,6 +583,14 @@ pre code {
     overflow-y: scroll;
 }
 
+.FlexFooter {
+    display: flex;
+    justify-content: space-around; /* or space-between, center, etc. */
+    align-items: center;
+}
+
+
+
 .container,
 .container-fluid,
 .container-xl,

@@ -1,7 +1,30 @@
 
 <footer>
 	© {{ __('misc.copyright') }}
+    <div class="FlexFooter">
+        <div class="OverOns">
+            <h3>Over ons</h3>
+            <p>Wij zijn een innovatief bedrijf dat zich richt op het verbeteren van digitale ervaringen.</p>
+            <p>Ons team bestaat uit gepassioneerde professionals.</p>
+        </div>
+        <div class="Contact">
+            <h3>Contact</h3>
+            <p>Email: info@yourcompany.com</p>
+            <p>Telefoon: +31 123 456 789</p>
+            <p>Adres: Straatnaam 12, 1234 AB Stad</p>
+        </div>
+        <div class="Social Links">
+            <h3>Socials</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
 </footer>
+
 
 
 <!-- analytics code -->
