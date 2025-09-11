@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
-
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -1205,8 +1204,15 @@ pre code {
     }
 
     .col-md-4 {
+        background: #343a40 ;
         flex: 0 0 33.3333333333%;
         max-width: 33.3333333333%;
+    }
+    .col-md-4 h2{
+        color: white
+    }
+    .col-md-4 a{
+        color: white
     }
 
     .col-md-5 {
