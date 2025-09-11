@@ -595,6 +595,11 @@ pre code {
     margin-left: auto;
 }
 
+.container h1{
+    font-size: 2.75rem;
+    font-weight: bold;
+}
+
 @media (min-width: 576px) {
 
     .container-sm,
@@ -1208,12 +1213,12 @@ pre code {
         flex: 0 0 33.3333333333%;
         max-width: 33.3333333333%;
     }
-    .col-md-4 h2{
-        color: white
-    }
-    .col-md-4 a{
-        color: white
-    }
+.col-md-4 h2,
+.col-md-4 a,
+.col-md-4 li  {
+    color: white;
+}
+
 
     .col-md-5 {
         flex: 0 0 41.6666666667%;
