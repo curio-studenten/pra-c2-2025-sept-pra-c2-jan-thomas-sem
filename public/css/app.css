@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -68,7 +69,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #343a40 ;
+    background-color: #343a40;
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
@@ -593,6 +594,11 @@ pre code {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.container h1 {
+    font-size: 2.75rem;
+    font-weight: bold;
 }
 
 @media (min-width: 576px) {
@@ -1204,16 +1210,17 @@ pre code {
     }
 
     .col-md-4 {
-        background: #343a40 ;
+        background: #343a40;
         flex: 0 0 33.3333333333%;
         max-width: 33.3333333333%;
     }
-    .col-md-4 h2{
-        color: white
+
+    .col-md-4 h2,
+    .col-md-4 a,
+    .col-md-4 li {
+        color: white;
     }
-    .col-md-4 a{
-        color: white
-    }
+
 
     .col-md-5 {
         flex: 0 0 41.6666666667%;
