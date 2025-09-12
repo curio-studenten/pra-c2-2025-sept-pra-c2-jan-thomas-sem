@@ -590,6 +590,13 @@ pre code {
     align-items: center;
 }
 
+.ButtonForName{
+    background: #e9ecef;
+    margin-bottom: 20px;
+    color: #3490dc;
+    border: none;
+}
+
 
 
 .container,
