@@ -2,7 +2,7 @@
 <div class="jumbotron">
     <div class="container">
         <div class="DownloadHeadTitle">
-        <a href="/" title="{{ __('misc.home_alt') }}" alt="{{ __('misc.home_alt') }}">
+        <a href="../1/BenQ" title="{{ __('misc.home_alt') }}" alt="{{ __('misc.home_alt') }}">
             <h1>{{ __('misc.homepage_title') }}</h1>
         </div>
         </a>
