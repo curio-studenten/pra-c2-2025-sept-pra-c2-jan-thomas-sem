@@ -34,7 +34,7 @@
 
 
 
-            <x-footer/>
+            <x-footer :name="'Thomas'"/>
 
     </div>
     </div>

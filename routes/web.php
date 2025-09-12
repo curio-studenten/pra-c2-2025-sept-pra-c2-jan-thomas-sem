@@ -28,6 +28,7 @@ Productcat:		/category/12/Computers/
 use App\Models\Brand;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductCategoryController;

@@ -1,5 +1,6 @@
 
 <footer>
+    {{ $name }}
 	© {{ __('misc.copyright') }}
     <div class="FlexFooter">
         <div class="OverOns">
@@ -22,10 +23,11 @@
                 <li><a href="#">Instagram</a></li>
             </ul>
         </div>
+
     </div>
 </footer>
 
-
+    
 
 <!-- analytics code -->
 <script type="text/javascript">
