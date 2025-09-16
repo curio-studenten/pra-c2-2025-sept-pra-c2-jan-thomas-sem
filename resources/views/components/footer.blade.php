@@ -1,6 +1,5 @@
 
 <footer>
-    <p>{{ $name }}</p>
 	© {{ __('misc.copyright') }}
     <div class="FlexFooter">
         <div class="OverOns">
