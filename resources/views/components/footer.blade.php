@@ -1,5 +1,6 @@
 
 <footer>
+    <p>{{ $name }}</p>
 	© {{ __('misc.copyright') }}
     <div class="FlexFooter">
         <div class="OverOns">
@@ -47,5 +48,4 @@
  if (top.location!= self.location) {
   top.location = self.location.href
  }
-
 </script>
