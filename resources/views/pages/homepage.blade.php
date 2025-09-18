@@ -11,9 +11,10 @@
             @php
                 $topTypes = \App\Models\Type::orderBy('counter', 'desc')->take(10)->get();
             @endphp
-            <b>Dit zijn de 10 populairste handleidingenW</b>
-            </br>
+            <b>Dit zijn de 10 populairste handleidingen</b>
+            <br>
             <ul>
+                <br>
                 @foreach ($topTypes as $type)
                     <li>{{ $type->name }}</br></li>
                 @endforeach
