@@ -73,7 +73,7 @@ footer {
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
-    margin-bottom: -;
+    margin-bottom: 10px;
 }
 
 body {
@@ -5278,6 +5278,26 @@ input[type=button].btn-block {
     background-color: #e9ecef;
     border-radius: 0.25rem;
 }
+
+.breadcrumbManuals {
+  display: flex;
+  justify-content: flex; /* 'end' should be 'flex-end' */
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  color:#3490dc;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+
+.ButtonForManualName {
+  background: #fffbdb   ;
+  margin-top: 0.5rem;
+  color: #1d68a7;
+  border: none;
+}
+
 
 .breadcrumb-item+.breadcrumb-item {
     padding-left: 0.5rem;
