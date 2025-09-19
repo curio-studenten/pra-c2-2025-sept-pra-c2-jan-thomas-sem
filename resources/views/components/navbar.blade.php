@@ -1,10 +1,15 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="container">
-        <div class="navbar-header mr-auto">
-            <a class="navbar-brand" href="/" title="{{ __('misc.home_alt') }}">{{ __('misc.homepage_title') }}</a>
-        </div>
-        <div id="navbar" class="form-inline">
+        <div class="navbar-header mr-auto d-flex align-items-center">
+            <a class="navbar-brand mr-3" href="/" title="{{ __('misc.home_alt') }}">
+                {{ __('misc.homepage_title') }}
+            </a>
 
+
+            <a class="nav-link text-light" href="{{ route('contact') }}">Contact</a>
+        </div>
+
+        <div id="navbar" class="form-inline">
             <script>
                 (function () {
                     var cx = 'partner-pub-6236044096491918:8149652050';
@@ -17,8 +22,6 @@
                 })();
             </script>
             <gcse:searchbox-only></gcse:searchbox-only>
-
-
-        </div><!--/.navbar-collapse -->
+        </div>
     </div>
 </nav>

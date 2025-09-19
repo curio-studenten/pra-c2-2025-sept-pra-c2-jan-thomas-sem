@@ -11,9 +11,10 @@
             @php
                 $topTypes = \App\Models\Type::orderBy('counter', 'desc')->take(10)->get();
             @endphp
-            <b>Dit zijn de 10 populairste handleidingen</b>
+            <b>Dit zijn de 10 populairste handleidingenW</b>
             </br>
             <ul>
+                <br>
                 @foreach ($topTypes as $type)
                     <li>{{ $type->name }}</br></li>
                 @endforeach
@@ -34,6 +35,25 @@
             $chunk_size = ceil($size / $columns);
             ?>
 
+            @php
+                $alphabet = range('A', 'Z');
+                $groupedBrands = $brands->groupBy(function ($brand) {
+                    return strtoupper(substr($brand->name, 0, 1));
+                });
+            @endphp
+
+            <div class="jumbotron">
+                    <span>Ga naar letter:<br></span>
+                    @foreach($alphabet as $letter)
+                    @if($groupedBrands->has($letter))
+                        <a href="#letter-{{ $letter }}">{{ $letter }}</a>
+                    @else
+                        <span class="disabled">{{ $letter }}</span>
+                    @endif
+                    @if(!$loop->last) - @endif
+                @endforeach
+            </div>
+
             <div class="container">
                 <!-- Example row of columns -->
                 <div class="row">
@@ -48,10 +68,10 @@
 
                                     if (!isset($header_first_letter) || (isset($header_first_letter) && $current_first_letter != $header_first_letter)) {
                                         echo '</ul>
-                                    						<h2>' .
+                                            <h2 id="letter-' . $current_first_letter . '">' . 
                                             $current_first_letter .
                                             '</h2>
-                                    						<ul>';
+                                            <ul>';
                                     }
                                     $header_first_letter = $current_first_letter;
                                     ?>

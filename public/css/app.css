@@ -589,6 +589,13 @@ pre code {
     justify-content: space-around;
     align-items: center;
 }
+
+.manual-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
 .ButtonForName{
     background: #e9ecef;
     margin-bottom: 20px;
