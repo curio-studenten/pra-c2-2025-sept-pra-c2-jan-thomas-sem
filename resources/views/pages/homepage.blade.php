@@ -42,7 +42,6 @@
             @endphp
 
             <div class="jumbotron">
-                <div class="alphabet-nav">
                     <span>Ga naar letter:<br></span>
                     @foreach($alphabet as $letter)
                     @if($groupedBrands->has($letter))
@@ -52,7 +51,6 @@
                     @endif
                     @if(!$loop->last) - @endif
                 @endforeach
-                </div>
             </div>
 
             <div class="container">

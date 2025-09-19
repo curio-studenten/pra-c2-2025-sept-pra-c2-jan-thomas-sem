@@ -14,7 +14,7 @@
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
+    <div class="manual-list">
         @foreach ($manuals as $manual)
 
             @if ($manual->locally_available)
