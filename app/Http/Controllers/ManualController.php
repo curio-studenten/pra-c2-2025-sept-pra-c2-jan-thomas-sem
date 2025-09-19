@@ -21,9 +21,11 @@ class ManualController extends Controller
 
     public function redirect($manual_id)
     {
+
+      
         $manual = Manual::findOrFail($manual_id);
         $manual->increment('counter');
-        dd("Counter after increment: " . $manual->counter);
+        $manual->save();
 
         return redirect()->to($manual->url);
     }
