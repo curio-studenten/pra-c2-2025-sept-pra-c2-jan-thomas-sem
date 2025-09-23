@@ -45,6 +45,10 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
+Route::get('/{letter}', [BrandController::class, 'brandsByLetter'])
+    ->where('letter', '[A-Z]')
+    ->name('brands.byLetter');
+
 
 Route::get('/manual.redirect/{manual_id}/', [ManualController::class, 'redirect'])->name('manual.redirect');
 
