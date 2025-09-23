@@ -50,7 +50,10 @@ Route::get('/{letter}', [BrandController::class, 'brandsByLetter'])
     ->name('brands.byLetter');
 
 
+Route::get('/manual.redirect/{manual_id}/', [ManualController::class, 'redirect'])->name('manual.redirect');
+
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
+
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 
 Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed']);
@@ -68,6 +71,6 @@ Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 's
 Route::get('/generateSitemap/', [SitemapController::class, 'generate']);
 
 
-Route::get('/manual-redirect/{manual_id}', [ManualController::class, 'redirect'])->name('manualRedirect');
+
 
 
