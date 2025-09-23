@@ -18,6 +18,14 @@ class BrandController extends Controller
             "brand" => $brand,
             "manuals" => $manuals
         ]);
+    }
 
+    public function brandsByLetter($letter)
+    {
+        $brands = Brand::where('name', 'like', $letter . '%')
+            ->orderBy('name')
+            ->get();
+
+        return view('pages/by_letter', compact('brands', 'letter'));
     }
 }
