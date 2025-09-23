@@ -15,6 +15,14 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
     }
 
+    protected $middlewareGroups = [
+        'web' => [
+            \App\Http\Middleware\LocaleMiddleware::class,
+            // other middleware...
+        ],
+        // other middleware groups...
+    ];
+
     /**
      * Register the commands for the application.
      */
