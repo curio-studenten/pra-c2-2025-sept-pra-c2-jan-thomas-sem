@@ -45,6 +45,11 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
+Route::get('/admin', function () {
+    $brands = Brand::all()->sortBy('name');
+    return view('pages.admin', compact('brands'));
+})->name('admin');
+
 Route::get('/{letter}', [BrandController::class, 'brandsByLetter'])
     ->where('letter', '[A-Z]')
     ->name('brands.byLetter');

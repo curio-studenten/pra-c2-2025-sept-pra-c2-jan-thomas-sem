@@ -7,11 +7,13 @@
 
 
             <a class="nav-link text-light" href="{{ route('contact') }}">Contact</a>
+            <a class="nav-link text-light" href="{{ route('admin') }}">Admin Page</a>
+
         </div>
 
         <div id="navbar" class="form-inline">
             <script>
-                (function () {
+                (function() {
                     var cx = 'partner-pub-6236044096491918:8149652050';
                     var gcse = document.createElement('script');
                     gcse.type = 'text/javascript';

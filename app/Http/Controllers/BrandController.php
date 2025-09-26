@@ -28,4 +28,16 @@ class BrandController extends Controller
 
         return view('pages/by_letter', compact('brands', 'letter'));
     }
+
+    public function index($brand_id, $brand_slug)
+    {
+
+        $brand = Brand::findOrFail($brand_id);
+        $manuals = Manual::all()->where('brand_id', $brand_id);
+
+        return view('pages/', [
+            "brand" => $brand,
+            "manuals" => $manuals
+        ]);
+    }
 }
