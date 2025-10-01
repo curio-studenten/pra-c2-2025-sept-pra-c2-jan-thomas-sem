@@ -55,24 +55,38 @@
 
                             if (!isset($header_first_letter) || (isset($header_first_letter) && $current_first_letter != $header_first_letter)) {
                                 echo '</ul>
-                                                                  <h2 id="letter-' .
+                                                                                                                                                                                  <h2 id="letter-' .
                                     $current_first_letter .
                                     '">
-                                                                      <a href="' .
+                                                                                                                                                                                      <a href="' .
                                     $current_first_letter .
                                     '">' .
                                     $current_first_letter .
                                     '</a>
-                                                                  </h2>
-                                                                  <ul>';
+                                                                                                                                                                                  </h2>
+                                                                                                                                                                                  <ul>';
                             }
                             $header_first_letter = $current_first_letter;
                             ?>
 
 
-                            <li>
-                                <a
-                                    href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/">{{ $brand->name }}</a>
+                            <li class="BrandLi">
+                                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/">
+                                    {{ $brand->name }}
+                                </a>
+
+                                <form
+                                    action="{{ route('brands.destroy', ['brand_id' => $brand->id, 'brand_slug' => $brand->getNameUrlEncodedAttribute()]) }}"
+                                    method="POST" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="DeleteButton" type="submit" title="Delete Brand"
+                                        onclick="return confirm('Shall we delete {{ $brand->name }} for you ?');">
+                                        To Delete
+                                    </button>
+
+                                </form>
+
                             </li>
                         @endforeach
                     </ul>

@@ -50,6 +50,9 @@ Route::get('/admin', function () {
     return view('pages.admin', compact('brands'));
 })->name('admin');
 
+Route::delete('/{brand_id}/{brand_slug}/', [BrandController::class, 'destroy'])->name('brands.destroy');
+
+
 Route::get('/{letter}', [BrandController::class, 'brandsByLetter'])
     ->where('letter', '[A-Z]')
     ->name('brands.byLetter');

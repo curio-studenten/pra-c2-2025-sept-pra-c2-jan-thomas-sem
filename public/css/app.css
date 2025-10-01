@@ -596,13 +596,19 @@ pre code {
     gap: 0.5rem;
 }
 
-.ButtonForName{
+.ButtonForName {
     background: #e9ecef;
     margin-bottom: 20px;
     color: #3490dc;
     border: none;
 }
 
+.DeleteButton {
+    position: relative;
+    margin-left: 20px;
+    background: local;
+    color: #3490dc;
+}
 
 .container,
 .container-fluid,
@@ -1243,6 +1249,29 @@ pre code {
     .col-md-4 li {
         color: white;
     }
+
+    .BrandLi a:hover {
+        transition: 0.75s;
+        color: #4aa0e6;
+    }
+
+    .DeleteButton:hover {
+        transition: 1s;
+        color: transparent;
+    }
+
+    .DeleteButton:hover::after {
+        transition: 2s;
+        content: "Click me!";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: red;
+        width: 100%;
+        text-align: center;
+    }
+
+
 
 
     .col-md-5 {
@@ -5280,22 +5309,23 @@ input[type=button].btn-block {
 }
 
 .breadcrumbManuals {
-  display: flex;
-  justify-content: flex; /* 'end' should be 'flex-end' */
-  flex-wrap: wrap;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
-  list-style: none;
-  color:#3490dc;
-  background-color: #e9ecef;
-  border-radius: 0.25rem;
+    display: flex;
+    justify-content: flex;
+    /* 'end' should be 'flex-end' */
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    color: #3490dc;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
 }
 
 .ButtonForManualName {
-  background: #fffbdb   ;
-  margin-top: 0.5rem;
-  color: #1d68a7;
-  border: none;
+    background: #fffbdb;
+    margin-top: 0.5rem;
+    color: #1d68a7;
+    border: none;
 }
 
 

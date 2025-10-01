@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Type;
 use App\Models\Brand;
 use App\Models\Manual;
 
@@ -39,5 +40,14 @@ class BrandController extends Controller
             "brand" => $brand,
             "manuals" => $manuals
         ]);
+    }
+
+    public function destroy($brand_id, $brand_slug)
+    {
+        $brand = Brand::findOrFail($brand_id);
+        Type::where('brand_id', $brand->id)->delete();
+        Manual::where('brand_id', $brand->id)->delete();
+        $brand->delete();
+        return redirect()->route('admin');
     }
 }
