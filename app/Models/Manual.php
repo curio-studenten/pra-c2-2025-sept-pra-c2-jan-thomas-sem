@@ -53,4 +53,13 @@ class Manual extends Model
 
         return $url; */
     }
+
+    protected $fillable = [
+        'name',
+        'brand_id',
+        'originUrl',
+        'filesize',
+        'filename',
+        'downloadedServer',
+    ];
 }

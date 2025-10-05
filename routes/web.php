@@ -34,6 +34,7 @@ use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\FormController;
 
 // Homepage
 Route::get('/', function () {
@@ -45,13 +46,15 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
+Route::get('/form', [FormController::class, 'index'])->name('form');
+Route::post('/form', [FormController::class, 'store'])->name('form.store');
+
 Route::get('/admin', function () {
     $brands = Brand::all()->sortBy('name');
     return view('pages.admin', compact('brands'));
 })->name('admin');
 
 Route::delete('/{brand_id}/{brand_slug}/', [BrandController::class, 'destroy'])->name('brands.destroy');
-
 
 Route::get('/{letter}', [BrandController::class, 'brandsByLetter'])
     ->where('letter', '[A-Z]')
