@@ -8,7 +8,7 @@
 
             <a class="nav-link text-light" href="{{ route('contact') }}">Contact</a>
             <a class="nav-link text-light" href="{{ route('admin') }}">Admin Page</a>
-            <a class="nav-link text-light" href="{{ route('form') }}">Add Manual</a>
+            <a class="nav-link text-light" href="{{ route('form') }}">Admin Page Add Manual</a>
 
         </div>
 
