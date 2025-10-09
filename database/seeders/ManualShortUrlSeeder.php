@@ -1,4 +1,5 @@
 <?php
+// filepath: 
 
 namespace Database\Seeders;
 
@@ -10,9 +11,10 @@ class ManualShortUrlSeeder extends Seeder
 {
     public function run()
     {
-        Manual::whereNull('short_url')->chunk(100, function ($manuals) {
+        // query stays whereNull('short_code') and we set short_code below
+        Manual::whereNull('short_code')->chunk(100, function ($manuals) {
             foreach ($manuals as $manual) {
-                $manual->short_url = UrlHelper::generateShortCode($manual->url);
+                $manual->short_code = UrlHelper::generateShortCode($manual->url);
                 $manual->save();
             }
         });

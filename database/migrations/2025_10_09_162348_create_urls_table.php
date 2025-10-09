@@ -16,8 +16,6 @@ return new class extends Migration
             $table->text('original_url');
             $table->string('short_code', 4);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamps();
-
         });
     }
 

@@ -34,7 +34,7 @@
                     alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
                 ({{ $manual->filesize_human_readable }})
             @else
-                <a href="{{ route('manual.redirect', $manual->id) }}" target="new" alt="{{ $manual->name }}" title="{{ $manual->name }}"><button class="ButtonForName">{{ $manual->name }}</button></a>
+                <a href="{{ route('redirect.index', $manual->short_code) }}" target="new" alt="{{ $manual->short_code }}" title="{{ $manual->short_code}}"><button class="ButtonForName">{{ $manual->short_code }}</button></a>
             @endif
 
             <br />

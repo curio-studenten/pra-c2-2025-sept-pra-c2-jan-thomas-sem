@@ -83,7 +83,7 @@ Route::get('/generateSitemap/', [SitemapController::class, 'generate']);
 
 Route::get('/language/{locale}', [LocaleController::class, 'changeLanguage'])->name('language.change');
 
-
+Route::get('/manual.redirect{code}', [RedirectController::class, 'redirectTo'])->name('redirect.index');
 
 
 
