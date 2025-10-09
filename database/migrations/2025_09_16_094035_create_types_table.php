@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('manuals', function (Blueprint $table) {
+        Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('brand_id');
             $table->string('name');
-            $table->bigInteger('filesize');
-            $table->text('originUrl');
-            $table->string('filename')->nullable();
-            $table->string('downloadedServer')->nullable();
+            $table->unsignedBigInteger('brand_id');
             $table->timestamps();
+            $table->unsignedBigInteger('counter');
             $table->foreign('brand_id')->references('id')->on('brands');
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('manuals');
+        Schema::dropIfExists('types');
     }
 };

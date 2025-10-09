@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-layouts.app2>
     `
     <x-slot:introduction_text>
         <p><img src="img/afbl_logo.png" align="right" width="100"
@@ -6,21 +6,6 @@
         <p>{{ __('introduction_texts.homepage_line_2') }}</p>
         <p>{{ __('introduction_texts.homepage_line_3') }}</p>
     </x-slot:introduction_text>
-
-    <div class="breadcrumb">
-        @php
-            $topTypes = \App\Models\Type::orderBy('counter', 'desc')->take(10)->get();
-        @endphp
-        <b>Dit zijn de 10 populairste handleidingen</b>
-        </br>
-        <ul>
-            <br>
-            @foreach ($topTypes as $type)
-                <li>{{ $type->name }}</br></li>
-            @endforeach
-        </ul>
-    </div>
-
 
     <h1>
         <x-slot:title>
@@ -70,24 +55,38 @@
 
                             if (!isset($header_first_letter) || (isset($header_first_letter) && $current_first_letter != $header_first_letter)) {
                                 echo '</ul>
-                                                                  <h2 id="letter-' .
+                                                                                                                                                                                  <h2 id="letter-' .
                                     $current_first_letter .
                                     '">
-                                                                      <a href="' .
+                                                                                                                                                                                      <a href="' .
                                     $current_first_letter .
                                     '">' .
                                     $current_first_letter .
                                     '</a>
-                                                                  </h2>
-                                                                  <ul>';
+                                                                                                                                                                                  </h2>
+                                                                                                                                                                                  <ul>';
                             }
                             $header_first_letter = $current_first_letter;
                             ?>
 
 
-                            <li>
-                                <a
-                                    href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/">{{ $brand->name }}</a>
+                            <li class="BrandLi">
+                                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/">
+                                    {{ $brand->name }}
+                                </a>
+
+                                <form
+                                    action="{{ route('brands.destroy', ['brand_id' => $brand->id, 'brand_slug' => $brand->getNameUrlEncodedAttribute()]) }}"
+                                    method="POST" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="DeleteButton" type="submit" title="Delete Brand"
+                                        onclick="return confirm('Shall we delete {{ $brand->name }} for you ?');">
+                                        To Delete
+                                    </button>
+
+                                </form>
+
                             </li>
                         @endforeach
                     </ul>
@@ -101,4 +100,4 @@
         </div>
 
     </div>
-</x-layouts.app>
+</x-layouts.app2>

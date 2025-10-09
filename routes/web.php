@@ -28,11 +28,13 @@ Productcat:		/category/12/Computers/
 use App\Models\Brand;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\FormController;
 
 // Homepage
 Route::get('/', function () {
@@ -40,7 +42,29 @@ Route::get('/', function () {
     return view('pages.homepage', compact('brands'));
 })->name('home');
 
+Route::get('/contact', function () {
+    return view('pages.contact');
+})->name('contact');
+
+Route::get('/form', [FormController::class, 'index'])->name('form');
+Route::post('/form', [FormController::class, 'store'])->name('form.store');
+
+Route::get('/admin', function () {
+    $brands = Brand::all()->sortBy('name');
+    return view('pages.admin', compact('brands'));
+})->name('admin');
+
+Route::delete('/{brand_id}/{brand_slug}/', [BrandController::class, 'destroy'])->name('brands.destroy');
+
+Route::get('/{letter}', [BrandController::class, 'brandsByLetter'])
+    ->where('letter', '[A-Z]')
+    ->name('brands.byLetter');
+
+
+Route::get('/manual.redirect/{manual_id}/', [ManualController::class, 'redirect'])->name('manual.redirect');
+
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
+
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 
 Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed']);
@@ -56,3 +80,10 @@ Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 's
 
 // Generate sitemaps
 Route::get('/generateSitemap/', [SitemapController::class, 'generate']);
+
+Route::get('/language/{locale}', [LocaleController::class, 'changeLanguage'])->name('language.change');
+
+
+
+
+

@@ -62,8 +62,4 @@ class Manual extends Model
         'filename',
         'downloadedServer',
     ];
-
-
-
-
 }
