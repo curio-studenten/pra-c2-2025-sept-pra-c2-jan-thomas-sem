@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Type;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
 
 class RedirectController extends Controller
 {
@@ -23,5 +24,16 @@ class RedirectController extends Controller
 
         $url = URL::to('sitemap-brand-'.$brand->id).'.xml';
         return redirect()->route($url);
+    }
+
+     public function redirectTo($code)
+    {
+        $row = DB::table('urls')->where('short_code', $code)->first();
+
+        if ($row && isset($row->original_url)) {
+            return redirect()->away($row->original_url);
+        } else {
+            abort(404, 'URL not found');
+        }
     }
 }
